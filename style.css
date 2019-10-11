@@ -19,14 +19,14 @@ h1{
   font-size: 23px;
 }
 h2{
-  font-size: 20px;
+  font-size: 30px;
   margin-top: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 p {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 24px;
-  margin-top: 7px;
+  margin-top: 5px;
   margin-bottom: 7px;
 }
 
@@ -87,10 +87,10 @@ p {
 }
 
 #about {
-  max-width: 800px;
+  max-width: 850px;
 }
 #publications, #research, #teaching, #news {
-  max-width: 640px;
+  max-width: 660px;
 }
 
 .image {
