@@ -1,120 +1,239 @@
+:root {
+  --ink: #1f2933;
+  --muted: #5f6f7a;
+  --line: #d8e0e5;
+  --paper: #ffffff;
+  --wash: #f5f8fa;
+  --navy: #17324d;
+  --teal: #2f6f73;
+  --rust: #a65036;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
-  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
   margin: 0;
   padding: 0;
-  background: #fff;
+  background: var(--wash);
 }
-img,video {
-  border: 1px solid #666;
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
-#research img{
-  border: none;
-}
+
 a {
-  color: #b54;
-  text-decoration: underline;
+  color: var(--rust);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
-h1{
-  font-size: 28px;
+
+a:hover {
+  color: var(--teal);
 }
-h2{
-  font-size: 25px;
-  margin-top: 20px;
-  margin-bottom: 15px;
+
+h1,
+h2,
+h3 {
+  color: var(--navy);
+  line-height: 1.2;
 }
-h3{
-  font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 15px;
+
+h1 {
+  font-size: 34px;
+  margin: 0;
 }
+
+h2 {
+  font-size: 26px;
+  margin: 0 0 24px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+h3 {
+  font-size: 19px;
+  margin: 28px 0 10px;
+}
+
 p {
-  font-size: 18px;
-  line-height: 24px;
-  margin-top: 5px;
-  margin-bottom: 7px;
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0 0 16px;
 }
 
 .header {
   text-align: center;
-  margin-top: 10px;
+  padding: 38px 20px 18px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
 }
+
+.header h1 {
+  letter-spacing: 0;
+}
+
+.header p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
 .nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   text-align: center;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--line);
 }
+
 .nav ul {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
   list-style: none;
-  text-align: center;
   margin: 0;
-  padding: 0;
+  padding: 8px 16px;
 }
+
 .nav li {
-  display: inline-block;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 1.2;
 }
+
 .nav a {
   display: block;
+  color: var(--navy);
+  padding: 10px 14px;
+  border-radius: 6px;
   text-decoration: none;
-  color: #333;
-  padding: 10px;
 }
+
 .nav a:hover {
-  background-color: #ccc;
+  background-color: #edf3f5;
 }
+
 .nav a.active {
-  background-color: #ccc;
+  background-color: var(--navy);
+  color: #fff;
   cursor: default;
-}
-@media (max-width: 500px) {
-  .nav ul{
-    width: 100%;
-  }
-  .nav li{
-    line-height: 10px;
-    display: block;
-  }
 }
 
 .container {
-  text-align: center;
-  margin-top: 10px;
+  width: min(100% - 32px, 1060px);
+  margin: 34px auto 0;
 }
+
 .page {
-  display: inline-block;
   text-align: left;
-  padding-left: 10px;
-  padding-right: 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 34px;
+  box-shadow: 0 12px 34px rgba(22, 45, 61, 0.08);
 }
+
 .content {
-  overflow: auto;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 34px;
+  align-items: start;
 }
 
 #about {
-  max-width: 850px;
+  max-width: none;
 }
-#publications, #research, #teaching, #news {
-  max-width: 660px;
+
+#publications,
+#research,
+#teaching,
+#news {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+#publications p {
+  padding-left: 18px;
+  border-left: 3px solid #e3ecef;
+}
+
+#research .image {
+  margin: 18px 0;
+}
+
+#research img {
+  border: 0;
 }
 
 .image {
-  float: left;
-  padding-top: 10px;
-  padding-right: 20px;
+  float: none;
+  padding: 0;
 }
-@media (max-width: 560px) {
-  .image {
-    text-align: center;
-    float: none;
-  }
+
+.image img {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 8px;
 }
+
+#about .image img {
+  width: 100%;
+}
+
 .text {
-  overflow: auto;
+  overflow: visible;
+}
+
+.text p:last-child {
+  margin-bottom: 0;
 }
 
 .footer {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  width: min(100% - 32px, 1060px);
+  margin: 34px auto 48px;
+  padding-top: 18px;
   text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .header {
+    padding-top: 28px;
+  }
+
+  .nav ul {
+    flex-wrap: wrap;
+  }
+
+  .container {
+    width: min(100% - 20px, 1060px);
+    margin-top: 18px;
+  }
+
+  .page {
+    padding: 22px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  #about .image img {
+    width: min(240px, 100%);
+    margin: 0 auto;
+  }
 }
