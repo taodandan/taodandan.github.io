@@ -172,6 +172,91 @@ p {
   border: 0;
 }
 
+#research .page-title {
+  font-size: 28px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-list {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.project {
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+
+.project::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: -20px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+.project:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.project summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 4px;
+  color: var(--navy);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.35;
+  cursor: pointer;
+  list-style: none;
+}
+
+.project summary::-webkit-details-marker {
+  display: none;
+}
+
+.project summary::after {
+  content: "\f105";
+  flex: 0 0 auto;
+  margin-left: auto;
+  color: var(--teal);
+  font-family: FontAwesome;
+  font-size: 20px;
+  transition: transform 160ms ease;
+}
+
+.project[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.project summary:hover {
+  color: var(--teal);
+}
+
+.project summary:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.project-content {
+  padding: 6px 4px 28px;
+}
+
+.project-content h3:first-of-type {
+  margin-top: 24px;
+}
+
+.project-content > :last-child {
+  margin-bottom: 0;
+}
+
 .image {
   float: none;
   padding: 0;
@@ -225,6 +310,24 @@ p {
 
   .page {
     padding: 22px;
+  }
+
+  #research .page-title {
+    font-size: 25px;
+  }
+
+  .project-list {
+    padding-left: 18px;
+  }
+
+  .project::before {
+    left: -15px;
+  }
+
+  .project summary {
+    gap: 8px;
+    font-size: 17px;
+    padding: 16px 2px;
   }
 
   .content {
