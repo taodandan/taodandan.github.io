@@ -179,6 +179,12 @@ p {
   border-bottom: 1px solid var(--line);
 }
 
+#research .section-divider {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 30px 0 22px;
+}
+
 .project-list {
   margin: 0;
   padding-left: 24px;
